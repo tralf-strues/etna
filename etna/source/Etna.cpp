@@ -168,6 +168,16 @@ void set_state(
     com_buffer, image, pipeline_stage_flags, access_flags, layout, aspect_flags, force);
 }
 
+void set_state_external(
+  vk::Image image,
+  vk::PipelineStageFlags2 pipeline_stage_flags,
+  vk::AccessFlags2 access_flags,
+  vk::ImageLayout layout)
+{
+  etna::get_context().getResourceTracker().setExternalTextureState(
+    image, pipeline_stage_flags, access_flags, layout);
+}
+
 void finish_frame(vk::CommandBuffer com_buffer)
 {
   etna::get_context().getResourceTracker().flushBarriers(com_buffer);

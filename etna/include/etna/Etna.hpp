@@ -122,6 +122,12 @@ void set_state(
   vk::ImageAspectFlags aspect_flags,
   ForceSetState force = ForceSetState::eFalse);
 
+void set_state_external(
+  vk::Image image,
+  vk::PipelineStageFlags2 pipeline_stage_flags,
+  vk::AccessFlags2 access_flags,
+  vk::ImageLayout layout);
+
 /**
  * \brief Flushes all barriers resulting from set_state calls.
  * \note Remember to call this before any draw/dispatch/transfer commands!

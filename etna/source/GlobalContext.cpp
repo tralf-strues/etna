@@ -241,9 +241,9 @@ static vk::UniqueDevice create_logical_device(
   // NOTE: These extensions are needed on MoltenVK to be set explicitly due to
   // it not fully supporting Vulkan 1.3 yet.
 #if defined(__APPLE__)
-  deviceExtensions.push_back(vk::KHRDynamicRenderingExtensionName);
-  deviceExtensions.push_back(vk::KHRSynchronization2ExtensionName);
-  deviceExtensions.push_back(vk::KHRCopyCommands2ExtensionName);
+  deviceExtensions.push_back(VK_KHR_DYNAMIC_RENDERING_EXTENSION_NAME);
+  deviceExtensions.push_back(VK_KHR_SYNCHRONIZATION_2_EXTENSION_NAME);
+  deviceExtensions.push_back(VK_KHR_COPY_COMMANDS_2_EXTENSION_NAME);
 
   // NOTE: Enable non-conformant Vulkan implementations.
   deviceExtensions.push_back(vk::KHRPortabilitySubsetExtensionName);
